@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { TextField, MenuItem, Button } from "@mui/material";
+import { TextField, MenuItem } from "@mui/material";
 
 const CreateTeams = () => {
   const [teamName, setTeamName] = useState("");
