@@ -18,10 +18,10 @@ const TaskCard = ({ title, assignee, status }: { title: string; assignee: string
     >
       {/* Left side */}
       <Box>
-        <Typography variant="h6" fontWeight="bold">
+        <Typography variant="h6" fontWeight="bold" color="#0D4C8B" textTransform="capitalize">
           {title}
         </Typography>
-        <Typography variant="body2" color="text.secondary">
+        <Typography variant="body2" color="#54C4F3">
           Assigned to: {assignee}
         </Typography>
       </Box>

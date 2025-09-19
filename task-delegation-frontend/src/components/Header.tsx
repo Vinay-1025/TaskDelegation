@@ -2,7 +2,6 @@ import  { useState } from "react";
 import {
   AppBar,
   Toolbar,
-  Typography,
   Box,
   Avatar,
   IconButton,
@@ -47,7 +46,7 @@ const handleLogout = () => {
           </Box>
 
           {/* Center: Page Title */}
-          <Typography
+          {/* <Typography
             variant="h6"
             fontWeight="bold"
             sx={{
@@ -58,7 +57,7 @@ const handleLogout = () => {
             }}
           >
             TaskBoard
-          </Typography>
+          </Typography> */}
 
           <Box>
             <IconButton
@@ -77,10 +76,11 @@ const handleLogout = () => {
               }}
               disableRipple
             >
+            
               <Avatar
                 alt="Bhaskar"
                 sx={{
-                  bgcolor: "#1e88e5",
+                  bgcolor: "#54c4f3",
                   color: "#fff",
                   fontWeight: "bold",
                   fontSize: "1rem",

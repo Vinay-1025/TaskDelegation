@@ -9,22 +9,20 @@ import DashboardLayout from '../pages/DashboardLayout'
 const AppRoutes = () => {
   return (
     <Routes>
-  {/* Dashboard layout with nested pages inside */}
-  <Route path="/dashboard" element={<DashboardLayout />}>
-    <Route index element={<Dashboard />} />
-    <Route path="teams" element={<Teams />} />
-    <Route path="tasks" element={<Tasks />} />
-    <Route path="users" element={<Users />} />
+      {/* Dashboard layout with nested pages inside */}
+      <Route path="/dashboard" element={<DashboardLayout />}>
+        <Route index element={<Dashboard />} />
+        <Route path="teams" element={<Teams />} />
+        <Route path="tasks" element={<Tasks />} />
+        <Route path="users" element={<Users />} />
+      </Route>
 
-  </Route>
+      {/* Login page */}
+      <Route path="/login" element={<LoginPage />} />
 
-  {/* Login page */}
-  <Route path="/login" element={<LoginPage />} />
-
-  {/* Default redirect */}
-  <Route path="" element={<Navigate to="/login" />} />
-</Routes>
-
+      {/* Default redirect */}
+      <Route path="" element={<Navigate to="/login" />} />
+    </Routes>
   )
 }
 

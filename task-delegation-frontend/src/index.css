@@ -14,11 +14,11 @@
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: #54c3f3c1;
   text-decoration: inherit;
 }
 a:hover {
-  color: #535bf2;
+  color: #54c4f3;
 }
 
 body {
@@ -48,7 +48,7 @@ button {
   transition: border-color 0.25s;
 }
 button:hover {
-  border-color: #646cff;
+  border-color: #0D4C8B;
 }
 button:focus,
 button:focus-visible {
@@ -61,7 +61,7 @@ button:focus-visible {
     background-color: #ffffff;
   }
   a:hover {
-    color: #747bff;
+    color: #54c4f3;
   }
   button {
     background-color: #f9f9f9;
@@ -70,6 +70,26 @@ button:focus-visible {
 
 body {
   font-family: 'Inter', sans-serif;
+}
+
+.button-common {
+  background-color: #54c4f3;
+  font-size: 15px;
+  text-transform: uppercase;
+  color: #fff;
+  border-radius: 6px;
+  border: 1px solid #54c4f3;
+  margin-top: 0;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    background-color: #0D4C8B;
+    border: 1px solid #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+  }
+}
+
+.common-icon {
+  color: #54c4f3;
 }
 
 @keyframes bgShift {

@@ -20,12 +20,15 @@ const Sidebar = () => {
     bottom: 0,
     left: 0,
     width: '64px',
-    bgcolor: '#1976d2',
+    background: 'linear-gradient(-96deg, #0d4c8bff, #274260ff )',
     display: 'flex',
     flexDirection: 'column',
     pt: theme.mixins.toolbar.minHeight,
     alignItems: 'center',
+    mt: 2,
+    mb: 1,
     py: 2,
+    borderRadius: '10px 0px 0px 10px' ,
   }}
 >
 {/* Top icons */}

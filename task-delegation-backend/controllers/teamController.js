@@ -7,7 +7,7 @@ exports.createTeam = async (req, res) => {
     const newTeam = new Team({
       name,
       members,
-      createdBy: req.user.id  
+      createdBy: req.user.id
     });
 
     const savedTeam = await newTeam.save();
@@ -24,19 +24,18 @@ exports.createTeam = async (req, res) => {
 };
 
 exports.getMyTeams = async (req, res) => {
-    try {
-      const myTeams = await Team.find({
-        members: req.user.id
-      }).populate('members', 'name email');
-  
-      res.status(200).json({
-        message: 'Your teams fetched successfully',
-        teams: myTeams
-      });
-  
-    } catch (err) {
-      console.error('Get Teams Error:', err.message);
-      res.status(500).json({ message: 'Server error' });
-    }
-  };
-  
+  try {
+    const myTeams = await Team.find({
+      members: req.user.id
+    }).populate('members', 'name email');
+
+    res.status(200).json({
+      message: 'Your teams fetched successfully',
+      teams: myTeams
+    });
+
+  } catch (err) {
+    console.error('Get Teams Error:', err.message);
+    res.status(500).json({ message: 'Server error' });
+  }
+};

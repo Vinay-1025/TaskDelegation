@@ -17,7 +17,7 @@ const AllTeams = () => {
   ];
 
   return (
-    <Box sx={{ p: 3 }}>
+    <Box sx={{ p: 0 }}>
       <Grid container spacing={3}>
         {teams.map((team) => (
           <Box
@@ -32,7 +32,7 @@ const AllTeams = () => {
           }}
         >
           <Card sx={{ p: 3, borderRadius: 2, boxShadow: 3 }}>
-            <Typography variant="h6" fontWeight="bold" gutterBottom>
+            <Typography variant="h6" fontWeight="bold" gutterBottom color="#0D4C8B">
               {team.name}
             </Typography>
         
@@ -40,7 +40,7 @@ const AllTeams = () => {
               {team.description}
             </Typography>
         
-            <Typography variant="caption" color="primary">
+            <Typography variant="caption" color="#54c4F3">
               {team.members.length} members
             </Typography>
         
@@ -53,6 +53,7 @@ const AllTeams = () => {
               </Button>
             </Box>
           </Card>
+          
         </Box>
         
         ))}

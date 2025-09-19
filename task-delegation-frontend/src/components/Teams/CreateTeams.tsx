@@ -1,72 +1,108 @@
 import { useState } from "react";
-import {
-  Dialog,
-  DialogTitle,
-  DialogContent,
-  DialogActions,
-  TextField,
-  Button,
-  MenuItem,
-} from "@mui/material";
+import { TextField, MenuItem, Button } from "@mui/material";
 
 const CreateTeams = () => {
-  const [open, setOpen] = useState(true); // auto open when this tab is selected
+  const [teamName, setTeamName] = useState("");
+  const [description, setDescription] = useState("");
+  const [teamLead, setTeamLead] = useState("");
   const [members, setMembers] = useState<string[]>([]);
+  const [creationDate, setCreationDate] = useState("");
 
-  const handleClose = () => {
-    setOpen(false);
+  const handleSubmit = () => {
+    // handle form submission here
+    console.log({ teamName, description, teamLead, members, creationDate });
+    // reset form
+    setTeamName("");
+    setDescription("");
+    setTeamLead("");
+    setMembers([]);
+    setCreationDate("");
   };
 
   return (
-    <Dialog open={open} onClose={handleClose} fullWidth maxWidth="sm">
-  <DialogTitle>Create a New Team</DialogTitle>
-  <DialogContent sx={{ display: "flex", flexDirection: "column", gap: 3, mt: 2 }}>
-    {/* Team Name */}
-    <TextField sx={{
-        mt:"20px"
-    }} label="Team Name" fullWidth />
+    <div className="row g-3">
+      <h2 style={{color: '#0D4C8B'}}>Create New Team</h2>
 
-    {/* Description */}
-    <TextField label="Description" multiline rows={3} fullWidth />
+      {/* Team Name */}
+      <div className="col-md-4">
+        <TextField
+          label="Team Name"
+          value={teamName}
+          onChange={(e) => setTeamName(e.target.value)}
+          fullWidth
+        />
+      </div>
 
-    {/* Team Lead */}
-    <TextField select label="Team Lead" fullWidth>
-      <MenuItem value="john">John Doe</MenuItem>
-      <MenuItem value="jane">Jane Smith</MenuItem>
-      <MenuItem value="ravi">Ravi Kumar</MenuItem>
-    </TextField>
+      {/* Team Lead */}
+      <div className="col-md-4">
+        <TextField
+          select
+          label="Team Lead"
+          value={teamLead}
+          onChange={(e) => setTeamLead(e.target.value)}
+          fullWidth
+        >
+          <MenuItem value="john">John Doe</MenuItem>
+          <MenuItem value="jane">Jane Smith</MenuItem>
+          <MenuItem value="ravi">Ravi Kumar</MenuItem>
+        </TextField>
+      </div>
 
-    {/* Members Multi-select */}
-    <TextField
-  select
-  label="Team Members"
-  value={members}
-  onChange={(e) => setMembers(typeof e.target.value === 'string' ? e.target.value.split(',') : e.target.value)}
-  SelectProps={{ multiple: true }}
-  fullWidth
->
-  <MenuItem value="john">John Doe</MenuItem>
-  <MenuItem value="jane">Jane Smith</MenuItem>
-  <MenuItem value="ravi">Ravi Kumar</MenuItem>
-  <MenuItem value="anu">Anu Priya</MenuItem>
-</TextField>
+       <div className="col-md-4">
+        <TextField
+          type="date"
+          label="Creation Date"
+          InputLabelProps={{ shrink: true }}
+          value={creationDate}
+          onChange={(e) => setCreationDate(e.target.value)}
+          fullWidth
+        />
+      </div>
 
+      {/* Description */}
+      <div className="col-md-12">
+        <TextField
+          label="Description"
+          multiline
+          rows={3}
+          value={description}
+          onChange={(e) => setDescription(e.target.value)}
+          fullWidth
+        />
+      </div>
 
-    {/* Optional: Creation Date */}
-    <TextField
-      type="date"
-      label="Creation Date"
-      InputLabelProps={{ shrink: true }}
-      fullWidth
-    />
-  </DialogContent>
-
-  <DialogActions sx={{ mb: 2 }}>
-    <Button onClick={handleClose} color="secondary">Cancel</Button>
-    <Button variant="contained" color="primary">Create Team</Button>
-  </DialogActions>
-</Dialog>
-
+      {/* Team Members Multi-select */}
+      <div className="col-md-12">
+        <TextField
+          select
+          label="Team Members"
+          value={members}
+          onChange={(e) =>
+            setMembers(
+              typeof e.target.value === "string"
+                ? e.target.value.split(",")
+                : e.target.value
+            )
+          }
+          SelectProps={{ multiple: true }}
+          fullWidth
+        >
+          <MenuItem value="john">John Doe</MenuItem>
+          <MenuItem value="jane">Jane Smith</MenuItem>
+          <MenuItem value="ravi">Ravi Kumar</MenuItem>
+          <MenuItem value="anu">Anu Priya</MenuItem>
+        </TextField>
+      </div>     
+      
+      <hr/>
+      {/* Submit Button */}
+      <div className="d-flex justify-content-end">
+        
+        <button className="button-common" onClick={handleSubmit}>
+          Create Team
+        </button>
+      </div>
+    </div>
   );
 };
 

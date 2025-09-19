@@ -1,4 +1,4 @@
-import { Box, Button, Card, Typography } from "@mui/material";
+import { Box, Card, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import AssignmentIcon from "@mui/icons-material/Assignment";
 
@@ -18,7 +18,7 @@ const Dashboard = () => {
       // minHeight: "100vh",
     }}
   >
-    <Typography variant="h5" mb={3} fontWeight="bold">
+    <Typography variant="h5" mb={3} fontWeight="bold" color="#54c4f3">
       Dashboard Overview
     </Typography>
 
@@ -44,7 +44,7 @@ const Dashboard = () => {
           }}
         >
           <Card
-            onClick={() => navigate("/tasks")}
+            onClick={() => navigate("/dashboard/tasks")}
             sx={{
               p: 3,
               display: "flex",
@@ -63,17 +63,17 @@ const Dashboard = () => {
             }}
           >
             <Box textAlign="center">
-              <AssignmentIcon  color="primary" />
-              <Typography variant="h6" mt={2} fontWeight="bold">
+              <AssignmentIcon className="common-icon" />
+              <Typography variant="h6" mt={2} fontWeight="bold" color="#0D4C8B">
                 Tasks
               </Typography>
               <Typography variant="body2" mt={1} color="text.secondary">
                 Manage daily assignments and task flow easily
               </Typography>
             </Box>
-            <Button variant="contained" sx={{ mt: 2, width: "100%" }}>
+            <button className="button-common mt-3" >
               Go to Tasks
-            </Button>
+            </button>
           </Card>
         </Box>
  
